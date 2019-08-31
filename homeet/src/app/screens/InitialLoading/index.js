@@ -7,12 +7,10 @@ import Routes from '@constants/routes';
 class InitialLoading extends PureComponent {
   static getDerivedStateFromProps(props) {
     if (!props.initialLoading) {
-      props.navigation.replace(props.currentUser ? Routes.Camera : Routes.Login);
+      props.navigation.replace(props.currentUser ? Routes.Home : Routes.Login);
     }
     return null;
   }
-
-  state = {};
 
   render() {
     return null;
