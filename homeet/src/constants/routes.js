@@ -3,7 +3,8 @@ const Routes = {
   Login: 'Login',
   Tab1: 'Tab1',
   Tab2: 'Tab2',
-  Home: 'Home'
+  Home: 'Home',
+  Camera: 'Camera'
 };
 
 export default Routes;
