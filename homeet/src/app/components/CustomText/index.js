@@ -41,13 +41,5 @@ CustomText.defaultProps = {
   textProps: {}
 };
 
-CustomText.propTypes = {
-  children: PropTypes.node.isRequired,
-  textProps: PropTypes.shape({ ...Text.propTypes })
-};
-
-CustomText.VARIANTS.forEach(variant => {
-  CustomText.propTypes[variant] = PropTypes.bool;
-});
 
 export default CustomText;

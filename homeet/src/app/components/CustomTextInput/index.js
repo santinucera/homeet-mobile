@@ -129,36 +129,6 @@ CustomTextInput.defaultProps = {
   maxHeight: 200
 };
 
-CustomTextInput.propTypes = {
-  underline: PropTypes.bool,
-  autoCapitalize: PropTypes.oneOf(['none', 'sentences', 'words', 'characters']),
-  clearButtonMode: PropTypes.oneOf(['never', 'while-editing', 'unless-editing', 'always']),
-  returnKeyType: PropTypes.oneOf(['done', 'go', 'next', 'search']),
-  keyboardType: PropTypes.oneOf(['default', 'numeric', 'email-address', 'phone-pad']),
-  underlineColorAndroid: PropTypes.string,
-  maxHeight: PropTypes.number,
-  autoCorrect: PropTypes.bool,
-  multiline: PropTypes.bool,
-  placeholder: PropTypes.string,
-  titleStyles: Text.propTypes.style,
-  textStyles: Text.propTypes.style,
-  multilineContainerStyle: Text.propTypes.style,
-  errorStyle: Text.propTypes.style,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
-  onFocus: PropTypes.func,
-  value: PropTypes.string,
-  showEye: PropTypes.bool,
-  secureTextEntry: PropTypes.bool,
-  title: PropTypes.string,
-  textRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
-  onTextSubmitEditing: PropTypes.func,
-  labelIcon: PropTypes.number,
-  deactivateIconColor: PropTypes.bool,
-  invalid: PropTypes.bool,
-  error: PropTypes.string
-};
-
 export const FormField = withForm(CustomTextInput);
 
 export default CustomTextInput;

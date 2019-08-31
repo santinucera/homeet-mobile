@@ -13,7 +13,7 @@ export const UPLOAD_PERSON_FIELDS = {
 
 export const strings = {
   next: 'Siguiente',
-  uploadButton: 'Subir',
+  uploadButton: 'Informar',
   name: 'Nombre',
   height: 'Altura',
   lastLocation: 'Ultima ubicación',
