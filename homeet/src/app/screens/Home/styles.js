@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { green } from '@constants/colors';
+import { green, blue } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
@@ -7,9 +7,16 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  mainButton: {
+  logout: {
     backgroundColor: green,
     padding: 10,
-    borderRadius: 3
+    borderRadius: 3,
+    margin: 30
+  },
+  camera: {
+    backgroundColor: blue,
+    padding: 10,
+    borderRadius: 3,
+    margin: 30
   }
 });

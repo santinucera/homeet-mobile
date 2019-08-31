@@ -7,23 +7,15 @@ import { stackNavConfig, screensNavOptions, tabNavConfig } from '@config/navigat
 import { inferRoute } from '@utils/navUtils';
 import InitialLoading from '@screens/InitialLoading';
 import Login from '@screens/Login';
-import Home from '@screens/Home';
 import Camera from '@screens/Camera';
+import Home from '@screens/Home';
 
 export default createStackNavigator(
   {
     ...inferRoute({ InitialLoading }),
     ...inferRoute({ Login }),
-    [Routes.Home]: {
-      screen: createBottomTabNavigator(
-        {
-          ...inferRoute({ Tab1: Camera }),
-          ...inferRoute({ Tab2: Home })
-        },
-        tabNavConfig
-      ),
-      navigationOptions: screensNavOptions[Routes.Home]
-    }
+    ...inferRoute({ Home }),
+    ...inferRoute({ Camera })
   },
   stackNavConfig
 );

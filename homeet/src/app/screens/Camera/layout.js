@@ -3,13 +3,14 @@ import { RNCamera } from 'react-native-camera';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import CustomText from '@components/CustomText';
-
+import CameraButton from './CameraButton';
 import styles from './styles';
 
 class Camera extends Component {
   
   camRef = React.createRef();
   render() {
+    const { onTakePicture, enabled } = this.props;
     return (
       <View style={styles.container}>
         <RNCamera
@@ -39,9 +40,5 @@ class Camera extends Component {
     );
   }
 }
-
-Camera.propTypes = {
-  onLogout: PropTypes.func.isRequired
-};
 
 export default Camera;
