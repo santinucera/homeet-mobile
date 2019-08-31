@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CameraRoll from '@react-native-community/cameraroll';
-import { actionCreators as CameraActions } from '@redux/camera/actions';
+import { NavigationActions, withNavigation } from 'react-navigation';
+import { compose } from 'recompose';
+import Routes from '@constants/routes';
 
 import Camera from './layout';
 
 const TAKE_PHOTO_OPTIONS = { quality: 0.5, base64: true, fixOrientation: true, pauseAfterCapture: true };
 class CameraContainer extends Component {
   state = {
-    enabled: true
+    enabled: true,
+    loading: true
   };
 
   handleTakePicture = () => {
@@ -17,14 +19,18 @@ class CameraContainer extends Component {
   };
 
   takePicture = async () => {
-    const { onSavePhoto } = this.props;
+    const { navigate } = this.props;
+    this.setState({ loading: true });
+    setTimeout(() => {}, 4000);
+    this.setState({ loading: false }, () => navigate());
+    /* const { onSavePhoto } = this.props;
     if (this.camera) {
       const { uri } = await this.camera.takePictureAsync(TAKE_PHOTO_OPTIONS);
       CameraRoll.saveToCameraRoll(uri);
       debugger;
       onSavePhoto(uri);
       this.setState({ enabled: true });
-    }
+    } */
   };
 
   refCam = cam => {
@@ -32,16 +38,21 @@ class CameraContainer extends Component {
   };
 
   render() {
-    const { enabled } = this.state;
+    const { enabled, loading } = this.state;
     return <Camera enabled={enabled} onTakePicture={this.handleTakePicture} refCam={this.refCam} />;
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  onSavePhoto: photo => dispatch(CameraActions.onSavePhoto(photo))
+  navigate: () => dispatch(NavigationActions.navigate({ routeName: Routes.Match }))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(CameraContainer);
+const enhancer = compose(
+  withNavigation,
+  connect(
+    null,
+    mapDispatchToProps
+  )
+);
+
+export default enhancer(CameraContainer);

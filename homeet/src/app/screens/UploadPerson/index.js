@@ -40,13 +40,11 @@ class UploadPersonContainer extends Component {
   }
 
   handleNext = () => {
-    debugger;
     this.setState(prevState => ({ currentStep: prevState.currentStep + 1 }));
   };
 
   handleUploadPerson = values => {
     const { uploadPerson } = this.props;
-    debugger;
     uploadPerson(values);
   };
 

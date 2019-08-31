@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { RNCamera } from 'react-native-camera';
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import { black } from '@constants/colors';
 
 import CameraButton from './CameraButton';
 import styles from './styles';
 
 class Camera extends Component {
   render() {
-    const { onTakePicture, enabled, refCam } = this.props;
-    return (
+    const { onTakePicture, enabled, refCam, loading } = this.props;
+    return loading ? (
+      <ActivityIndicator size="large" color={black} />
+    ) : (
       <View style={styles.container}>
         <RNCamera
           style={styles.preview}

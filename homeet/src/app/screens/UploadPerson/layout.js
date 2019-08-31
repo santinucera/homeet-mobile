@@ -56,7 +56,6 @@ class UploadPerson extends Component {
 
   render() {
     const { currentStep, handleSubmit, values, setFieldValue, onNext } = this.props;
-    debugger;
     const finalStep = currentStep === 1;
     return (
       <BaseForm link onSubmit={handleSubmit} scrolleable>

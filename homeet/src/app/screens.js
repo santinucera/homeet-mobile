@@ -9,6 +9,7 @@ import Login from '@screens/Login';
 import Camera from '@screens/Camera';
 import Home from '@screens/Home';
 import UploadPerson from '@screens/UploadPerson';
+import Match from '@screens/Match';
 
 export default createStackNavigator(
   {
@@ -16,7 +17,8 @@ export default createStackNavigator(
     ...inferRoute({ Login }),
     ...inferRoute({ Camera }),
     ...inferRoute({ Home }),
-    ...inferRoute({ UploadPerson })
+    ...inferRoute({ UploadPerson }),
+    ...inferRoute({ Match })
   },
   stackNavConfig
 );

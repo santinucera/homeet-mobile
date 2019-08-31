@@ -12,7 +12,6 @@ export const actionCreators = {
     payload: photo,
     injections: [
       withPostSuccess((dispatch, response) => {
-        debugger;
         dispatch(
           StackActions.reset({
             index: 0,
@@ -20,9 +19,7 @@ export const actionCreators = {
           })
         );
       }),
-      withPostFailure((dispatch, response) => {
-        debugger;
-      })
+      withPostFailure((dispatch, response) => {})
     ]
   })
 };

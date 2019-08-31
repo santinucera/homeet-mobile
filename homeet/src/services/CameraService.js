@@ -8,17 +8,13 @@ const setPhotoName = () => {
 
 export const sendPhoto = async photo => {
   const response = await setPhotoName();
-  debugger;
   CameraRoll.getPhotos({
     first: 10
   })
     .then(r => {
       console.log(r);
-      debugger;
       return r.edges.find(p => p.node.image.uri === photo);
     })
     .then(result => api.put(response.data.url, result))
-    .catch(err => {
-      debugger;
-    });
+    .catch(err => {});
 };
