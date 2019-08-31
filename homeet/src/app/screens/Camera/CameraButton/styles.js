@@ -1,17 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { green, transparent } from '@constants/colors';
+import { green } from '@constants/colors';
 
 const styles = StyleSheet.create({
-  transparentCircle: {
-    alignItems: 'center',
-    borderRadius: 3,
-    borderColor: green,
-    borderWidth: 1,
-    justifyContent: 'center',
-    backgroundColor: transparent,
-    height: 5,
-    width: 5
-  },
   blueCircle: {
     backgroundColor: green,
     borderRadius: 30,

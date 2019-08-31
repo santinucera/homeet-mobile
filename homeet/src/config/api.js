@@ -4,7 +4,6 @@ import { create } from 'apisauce';
 const baseURL = 'https://1r08mbep4f.execute-api.us-east-1.amazonaws.com/dev';
 
 const api = create({
-  baseURL,
   timeout: 5000
 });
 

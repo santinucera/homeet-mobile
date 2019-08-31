@@ -23,4 +23,5 @@ export const authSetup = async dispatch => {
   dispatch(authActions.init(currentUser));
 };
 
-export const login = authData => api.post('/login', authData);
+export const login = authData =>
+  api.post('https://1r08mbep4f.execute-api.us-east-1.amazonaws.com/dev/login', authData);
