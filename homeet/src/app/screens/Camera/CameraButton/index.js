@@ -4,7 +4,7 @@ import { View, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 
-function CameraButton({ onTakePhoto, enabled, logOut }) {
+function CameraButton({ onTakePhoto, enabled }) {
   return (
     <View style={styles.transparentCircle}>
       <TouchableOpacity onPress={onTakePhoto} style={styles.blueCircle} activeOpacity={enabled ? 1 : 0} />

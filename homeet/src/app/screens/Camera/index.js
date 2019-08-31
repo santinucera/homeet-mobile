@@ -6,6 +6,10 @@ import Camera from './layout';
 
 const TAKE_PHOTO_OPTIONS = { quality: 0.5, base64: true };
 class CameraContainer extends Component {
+  state = {
+    enabled: true
+  };
+
   handleTakePicture = () => {
     const { enabled } = this.state;
     return enabled && this.setState({ enabled: false }, this.takePicture);
@@ -13,14 +17,23 @@ class CameraContainer extends Component {
 
   takePicture = async () => {
     const { onSavePhoto } = this.props;
+    debugger;
     if (this.camera) {
+      debugger;
       const data = await this.camera.takePictureAsync(TAKE_PHOTO_OPTIONS);
+      debugger;
       onSavePhoto({ photo: data.base64, enabled: true });
     }
   };
 
+  refCam = cam => {
+    this.camera = cam;
+  };
+
   render() {
-    return <Camera onTakePicture={this.handleTakePicture} />;
+    const { enabled } = this.state;
+    debugger;
+    return <Camera enabled={enabled} onTakePicture={this.takePicture} refCam={this.refCam} />;
   }
 }
 

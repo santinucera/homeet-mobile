@@ -12,8 +12,6 @@ class InitialLoading extends PureComponent {
     return null;
   }
 
-  state = {};
-
   render() {
     return null;
   }
