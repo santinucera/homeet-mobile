@@ -1,53 +1,75 @@
 import { StyleSheet } from 'react-native';
-import { transparent, black, green, gray, white } from '@constants/colors';
+import { transparent, alto, white } from '@constants/colors';
 
-const iconSize = 20;
+const iconSize = 30;
 
 const borderlessStyle = {
   borderWidth: 0,
-  backgroundColor: transparent
+  backgroundColor: transparent,
+  height: 30,
+  width: 'auto'
+};
+
+const sideComponentStyle = {
+  flex: 0.25,
+  justifyContent: 'center',
+  marginHorizontal: 10
 };
 
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
+    height: 50,
     alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8
+    justifyContent: 'space-between',
+    borderRadius: 4
+  },
+  loadingContainer: {
+    justifyContent: 'center'
   },
   icon: {
     height: iconSize,
     width: iconSize
   },
-  borderless: borderlessStyle,
-  radial: {
-    borderRadius: 100
+  iconDisabled: {
+    tintColor: alto
   },
-  black: {
-    backgroundColor: black
-  },
-  blackContent: {
+  primaryBtn: {
+    backgroundColor: '#2A5365',
+    borderRadius: 4,
     color: white
   },
-  white: {
+  secondaryBtn: {
+    borderWidth: 2,
+    borderColor: alto,
     backgroundColor: white
   },
-  whiteContent: {
-    color: black
+  disabled: {
+    backgroundColor: alto,
+    borderWidth: 0
   },
-  gray: {
-    backgroundColor: gray
+  borderless: borderlessStyle,
+  borderlessWrapper: {
+    width: 'auto'
   },
-  grayContent: {
-    color: black
-  },
-  borderlessContent: {
-    color: gray
-  },
-  green: {
-    backgroundColor: green
-  },
-  greenContent: {
+  borderlessText: {
+    textDecorationLine: 'none',
     color: white
+  },
+  boldText: {
+    fontWeight: 'bold'
+  },
+  centerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  leftComponent: {
+    ...sideComponentStyle,
+    alignItems: 'flex-start'
+  },
+  rightComponent: {
+    ...sideComponentStyle,
+    alignItems: 'flex-end'
   }
 });

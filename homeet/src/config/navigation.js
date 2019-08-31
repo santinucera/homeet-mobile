@@ -33,9 +33,6 @@ export const screensNavOptions = {
   [Routes.Home]: {
     headerTitle: 'Home'
   },
-  [Routes.Login]: {
-    header: null
-  }
   */
   [Routes.Camera]: ({ navigation }) => ({
     headerTitle: 'Camara',
@@ -49,6 +46,9 @@ export const screensNavOptions = {
       elevation: 0,
       shadowOpacity: 0
     }
+  },
+  [Routes.Login]: {
+    header: null
   }
 };
 

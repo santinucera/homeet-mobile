@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import CustomText from '@components/CustomText';
-import { transparent } from '@constants/colors';
+import withForm from '@components/withForm';
+import { transparent, alto } from '@constants/colors';
 
 import ShowPassword from './components/ShowPassword';
 import styles from './styles';
@@ -11,61 +12,105 @@ import styles from './styles';
 // https://github.com/facebook/react-native/issues/5859
 
 class CustomTextInput extends PureComponent {
-  state = { showPassword: false };
+  state = {
+    showPassword: false,
+    active: false
+  };
 
-  handleShowPassword = () => this.setState(prevState => ({ showPassword: !prevState.showPassword }));
+  handleShowPassword = () => {
+    this.setState(prevState => ({ showPassword: !prevState.showPassword }));
+  };
+
+  toggleActive = () => {
+    this.setState(prevState => ({
+      active: !prevState.active
+    }));
+  };
+
+  onFocus = () => {
+    const { onFocus } = this.props;
+    this.toggleActive();
+    (onFocus || Function)();
+  };
+
+  onBlur = () => {
+    const { onBlur } = this.props;
+    this.toggleActive();
+    (onBlur || Function)();
+  };
 
   render() {
     const {
       value,
-      placeholderTextColor,
       title,
       titleStyles,
       multiline,
-      bottomBorder,
       style,
+      underline,
       onChange,
-      onBlur,
-      onFocus,
       textStyles,
+      multilineContainerStyle,
       secureTextEntry,
       showEye,
-      autoComplete
+      invalid,
+      labelIcon,
+      error,
+      errorStyle,
+      textRef,
+      deactivateIconColor,
+      onTextSubmitEditing
     } = this.props;
-    const { showPassword } = this.state;
-    const placeholderColor = value ? transparent : placeholderTextColor;
+    const { showPassword, active } = this.state;
     return (
-      <View>
+      <>
         {title && (
-          <CustomText gray small style={[styles.title, titleStyles]}>
+          <CustomText alto small style={[styles.title, titleStyles]}>
             {title}
           </CustomText>
         )}
         <View
           style={[
-            multiline ? styles.multilineContainer : styles.container,
-            bottomBorder && styles.bottomBorder,
+            multiline ? multilineContainerStyle : styles.container,
+            underline && [
+              styles.underline,
+              !deactivateIconColor && active && styles.underlineActive,
+              !deactivateIconColor && invalid && styles.underlineError
+            ],
             style
           ]}
         >
+          {labelIcon && (
+            <Image
+              source={labelIcon}
+              style={[
+                styles.labelIcon,
+                !deactivateIconColor && active && styles.labelIconActive,
+                invalid && styles.labelIconError
+              ]}
+            />
+          )}
           <TextInput
             {...this.props}
             allowFontScaling={false}
             onChangeText={onChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
+            onBlur={this.onBlur}
+            onFocus={this.onFocus}
             value={value}
             style={[styles.inputStyle, multiline ? styles.multilineInput : styles.singleInput, textStyles]}
-            placeholderTextColor={placeholderColor}
+            placeholderTextColor={alto}
             secureTextEntry={secureTextEntry && !showPassword}
-            autoComplete={secureTextEntry ? 'off' : autoComplete}
+            ref={textRef}
+            onSubmitEditing={onTextSubmitEditing}
+            multiline={multiline}
           />
-          {secureTextEntry &&
-            showEye && (
-              <ShowPassword onShowPassword={this.handleShowPassword} passwordVisible={showPassword} />
-            )}
+          {secureTextEntry && showEye && (
+            <ShowPassword onShowPassword={this.handleShowPassword} passwordVisible={showPassword} />
+          )}
         </View>
-      </View>
+        <CustomText error style={[styles.errorMessage, errorStyle]}>
+          {invalid && error}
+        </CustomText>
+      </>
     );
   }
 }
@@ -79,12 +124,13 @@ CustomTextInput.defaultProps = {
   underlineColorAndroid: transparent,
   keyboardType: 'default',
   multiline: false,
-  bottomBorder: false,
+  underline: false,
+  deactivateIconColor: false,
   maxHeight: 200
 };
 
 CustomTextInput.propTypes = {
-  bottomBorder: PropTypes.bool,
+  underline: PropTypes.bool,
   autoCapitalize: PropTypes.oneOf(['none', 'sentences', 'words', 'characters']),
   clearButtonMode: PropTypes.oneOf(['never', 'while-editing', 'unless-editing', 'always']),
   returnKeyType: PropTypes.oneOf(['done', 'go', 'next', 'search']),
@@ -96,15 +142,23 @@ CustomTextInput.propTypes = {
   placeholder: PropTypes.string,
   titleStyles: Text.propTypes.style,
   textStyles: Text.propTypes.style,
+  multilineContainerStyle: Text.propTypes.style,
+  errorStyle: Text.propTypes.style,
   onBlur: PropTypes.func,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   value: PropTypes.string,
-  placeholderTextColor: PropTypes.string,
   showEye: PropTypes.bool,
   secureTextEntry: PropTypes.bool,
   title: PropTypes.string,
-  autoComplete: PropTypes.string
+  textRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  onTextSubmitEditing: PropTypes.func,
+  labelIcon: PropTypes.number,
+  deactivateIconColor: PropTypes.bool,
+  invalid: PropTypes.bool,
+  error: PropTypes.string
 };
+
+export const FormField = withForm(CustomTextInput);
 
 export default CustomTextInput;

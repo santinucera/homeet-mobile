@@ -1,31 +1,76 @@
-import {StyleSheet} from 'react-native';
-import {green, blue, transparent} from '@constants/colors';
+import { StyleSheet } from 'react-native';
+import { transparent, gray, white, blueNavy } from '@constants/colors';
+import { scale, verticalScale } from '@utils/scalingUtils';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+  separatorText: {
+    marginHorizontal: scale(10)
   },
-  formElementContainer: {
-    backgroundColor: transparent,
-    borderBottomColor: blue,
-    borderBottomWidth: 1
+  container: {
+    paddingHorizontal: scale(30),
+    paddingVertical: scale(50),
+    flex: 1,
+    height: '100%',
+    justifyContent: 'space-around',
+    backgroundColor: '#DCC7AF'
+  },
+  hiddenLogoView: {
+    paddingVertical: scale(100),
+    justifyContent: 'flex-start'
+  },
+  forgotPasswordBtn: {
+    alignSelf: 'flex-end'
   },
   formElement: {
-    padding: 3,
-    margin: 5,
     backgroundColor: transparent,
-    height: 30,
-    width: 200,
+    height: verticalScale(42),
+    width: '100%',
+    color: blueNavy
   },
-  formButton: {
-    backgroundColor: green,
-    padding: 10,
-    borderRadius: 3,
-    margin: 20
+  logo: {
+    alignSelf: 'center',
+    marginTop: verticalScale(40),
+    marginBottom: verticalScale(25),
+    height: scale(300),
+    width: scale(450)
   },
-  title: {
-    marginBottom: 200
+  logInOptionBtn: {
+    padding: scale(10),
+    borderWidth: 1.5,
+    borderRadius: 5,
+    width: '48%',
+    marginHorizontal: '2%'
+  },
+  loginBtn: {
+    marginVertical: verticalScale(24)
+  },
+  icon: {
+    marginRight: 10
+  },
+  registerAccount: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  separatorContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly'
+  },
+  signUpTxt: {
+    alignSelf: 'center',
+    marginHorizontal: scale(10),
+    color: gray
+  },
+  blackText: {
+    color: '#2A5365'
+  },
+  whiteText: {
+    color: white
+  },
+  hiddenLogo: {
+    width: 0,
+    height: 0,
+    marginBottom: 0
   }
 });

@@ -15,13 +15,13 @@
     "test:watch": "jest --watch",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
     "lint-fix": "eslint src --fix",
-    "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs eslint",
-    "precommit": "npm run lint-diff"
+    "lint-diff": "git diff --name-only --cached --relative | grep \\.js$ | xargs eslint"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
     "apisauce": "^1.1.0",
     "change-case": "^3.1.0",
+    "formik": "^1.5.8",
     "i18next": "^17.0.13",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
@@ -29,7 +29,9 @@
     "react-native": "0.60.5",
     "react-native-camera": "^3.3.0",
     "react-native-config": "^0.11.7",
+    "react-native-fast-image": "^7.0.2",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-linear-gradient": "^2.5.6",
     "react-native-permissions": "^1.2.0",
     "react-native-settings": "^0.1.2",
     "react-navigation": "^3.12.1",
@@ -43,7 +45,8 @@
     "redux-recompose": "^2.2.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "seamless-immutable": "^7.1.4"
+    "seamless-immutable": "^7.1.4",
+    "yup": "^0.27.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
