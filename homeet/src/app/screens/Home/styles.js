@@ -5,18 +5,12 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#DCC7AF',
+    paddingHorizontal: 40
   },
-  logout: {
-    backgroundColor: green,
-    padding: 10,
-    borderRadius: 3,
-    margin: 30
-  },
-  camera: {
-    backgroundColor: blue,
-    padding: 10,
-    borderRadius: 3,
-    margin: 30
+  image: {
+    width: 200,
+    height: 200,
   }
 });
