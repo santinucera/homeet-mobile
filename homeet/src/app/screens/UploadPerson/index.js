@@ -6,7 +6,7 @@ import Routes from '@constants/routes';
 import AuthActions from '@redux/auth/actions';
 
 import { UPLOAD_PERSON_FIELDS } from './constants';
-import SignUp from './layout';
+import UploadPerson from './layout';
 
 class UploadPersonContainer extends Component {
   state = {
@@ -18,7 +18,6 @@ class UploadPersonContainer extends Component {
     [UPLOAD_PERSON_FIELDS.HEIGHT]: '',
     [UPLOAD_PERSON_FIELDS.ID]: '',
     [UPLOAD_PERSON_FIELDS.LAST_LOCATION]: '',
-    [UPLOAD_PERSON_FIELDS.LAST_NAME]: '',
     [UPLOAD_PERSON_FIELDS.NAME]: ''
   };
 
@@ -28,7 +27,6 @@ class UploadPersonContainer extends Component {
       [UPLOAD_PERSON_FIELDS.HEIGHT]: string().required('Campo requerido'),
       [UPLOAD_PERSON_FIELDS.ID]: string().required('Campo requerido'),
       [UPLOAD_PERSON_FIELDS.LAST_LOCATION]: string().required('Campo requerido'),
-      [UPLOAD_PERSON_FIELDS.LAST_NAME]: string().required('Campo requerido'),
       [UPLOAD_PERSON_FIELDS.NAME]: string().required('Campo requerido')
     }),
     1: object().shape({})
@@ -42,30 +40,26 @@ class UploadPersonContainer extends Component {
   }
 
   handleNext = () => {
-    const { error, cleanSignUpError } = this.props;
-    if (error) cleanSignUpError();
+    debugger;
     this.setState(prevState => ({ currentStep: prevState.currentStep + 1 }));
   };
 
-  handleBack = () => this.setState(prevState => ({ currentStep: prevState.currentStep - 1 }));
-
-  handleSignUp = values => {
-    const { signUp } = this.props;
-    signUp(values);
+  handleUploadPerson = values => {
+    const { uploadPerson } = this.props;
+    debugger;
+    uploadPerson(values);
   };
 
   render() {
     const { currentStep } = this.state;
     const { loading } = this.props;
     return (
-      <SignUp
+      <UploadPerson
         currentStep={currentStep}
         onNext={this.handleNext}
-        onBack={this.handleBack}
-        onGoToLogin={this.handleGotoLogIn}
         validationSchema={this.formValidationSchema}
         initialValues={this.initialValues}
-        onSignUp={this.handleSignUp}
+        onUpload={this.handleUploadPerson}
         loading={loading}
       />
     );
@@ -77,18 +71,10 @@ const mapStateToProps = state => ({
   error: state.auth.signUpUserError
 });
 
-UploadPersonContainer.propTypes = {
-  error: PropTypes.shape({
-    internalCode: PropTypes.string.isRequired
-  }),
-  signUp: PropTypes.func.isRequired,
-  cleanSignUpError: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired
-};
+UploadPersonContainer.propTypes = {};
 
 const mapDispatchToProps = dispatch => ({
-  signUp: values => dispatch(AuthActions.signUp(values)),
-  cleanSignUpError: () => dispatch(AuthActions.cleanSignUpError())
+  uploadPerson: values => dispatch(AuthActions.signUp(values))
 });
 
 export default connect(

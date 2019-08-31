@@ -71,12 +71,7 @@ const styles = StyleSheet.create({
   },
   signUpBtn: {
     borderRadius: 5,
-    width: '45%'
-  },
-  backButton: {
-    borderRadius: 5,
-    width: '45%',
-    marginRight: '5%'
+    width: '100%'
   },
   buttons: {
     flexDirection: 'row',
