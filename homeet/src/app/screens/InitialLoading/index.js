@@ -5,6 +5,7 @@ import Loadable from '@components/Loadable';
 import Routes from '@constants/routes';
 
 class InitialLoading extends PureComponent {
+  state={}
   static getDerivedStateFromProps(props) {
     if (!props.initialLoading) {
       props.navigation.replace(props.currentUser ? Routes.Home : Routes.Login);

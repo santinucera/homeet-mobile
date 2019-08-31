@@ -20,7 +20,7 @@ export default function Home({ onCamera, onUploadPerson }) {
       <SeparatorWithText separatorStyle={{ backgroundColor: blueNavy, marginBottom: 40, marginTop: 20 }} />
       <TouchableOpacity onPress={onUploadPerson}>
         <Image source={upload} style={styles.image} />
-        <CustomButton onPress={onUploadPerson} black title="Subir" />
+        <CustomButton onPress={onUploadPerson} black title="Informar" />
       </TouchableOpacity>
     </View>
   );

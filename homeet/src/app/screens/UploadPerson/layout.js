@@ -7,7 +7,6 @@ import StepIndicator from '@components/CustomStepper';
 import KeyboardAware from '@components/KeyboardAware';
 import { FormField as CustomTextInput } from '@components/CustomTextInput';
 import CustomButton from '@components/CustomButton';
-import CustomText from '@components/CustomText';
 import Loadable from '@components/Loadable';
 import BaseForm from '@components/BaseForm';
 import locationIcon from '@assets/ic_localizacion.png';

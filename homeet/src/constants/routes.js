@@ -6,7 +6,8 @@ const Routes = {
   Home: 'Home',
   Camera: 'Camera',
   UploadPerson: 'UploadPerson',
-  Match: 'Match'
+  Match: 'Match',
+  ThankYou: 'ThankYou'
 };
 
 export default Routes;
