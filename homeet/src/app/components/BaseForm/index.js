@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SafeAreaView, withNavigation } from 'react-navigation';
+import { withNavigation } from 'react-navigation';
 import { ScrollView, View, ViewPropTypes } from 'react-native';
 import CustomButton from '@components/CustomButton';
 
@@ -66,7 +66,7 @@ class BaseForm extends Component {
     const Container = scrolleable ? ScrollView : View;
     const containerStyle = [primaryBtn && showButton && styles.primaryContainer, style];
     return (
-      <SafeAreaView forceInset={{ top: 'never' }} style={styles.container}>
+      <View style={styles.container}>
         <Container
           style={[!scrolleable && [styles.contentContainer, containerStyle], customStyle]}
           contentContainerStyle={[styles.contentContainer, scrolleable && containerStyle]}
@@ -101,7 +101,7 @@ class BaseForm extends Component {
           )}
         </Container>
         {!!bottomFixedComponent && <View style={styles.bottomFixed}>{bottomFixedComponent}</View>}
-      </SafeAreaView>
+      </View>
     );
   }
 }

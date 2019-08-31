@@ -7,10 +7,12 @@ export default StyleSheet.create({
     marginHorizontal: scale(10)
   },
   container: {
-    padding: scale(30),
+    paddingHorizontal: scale(30),
+    paddingVertical: scale(50),
     flex: 1,
     height: '100%',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    backgroundColor: '#DCC7AF'
   },
   hiddenLogoView: {
     paddingVertical: scale(100),
@@ -29,8 +31,8 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginTop: verticalScale(40),
     marginBottom: verticalScale(25),
-    height: scale(150),
-    width: scale(300)
+    height: scale(300),
+    width: scale(450)
   },
   logInOptionBtn: {
     padding: scale(10),
@@ -61,7 +63,7 @@ export default StyleSheet.create({
     color: gray
   },
   blackText: {
-    color: black
+    color: '#2A5365'
   },
   whiteText: {
     color: white

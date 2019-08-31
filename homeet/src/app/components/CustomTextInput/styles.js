@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { black, red, gray, transparent } from '@constants/colors';
+import { red, gray, transparent, blueNavy } from '@constants/colors';
 import { scale } from '@utils/scalingUtils';
 
 const ICON_SIZE = scale(18);
@@ -32,7 +32,7 @@ export default StyleSheet.create({
     tintColor: red
   },
   labelIconActive: {
-    tintColor: black
+    tintColor: blueNavy
   },
   underline: {
     borderBottomWidth: 1,
@@ -42,7 +42,7 @@ export default StyleSheet.create({
     borderBottomColor: red
   },
   underlineActive: {
-    borderBottomColor: black
+    borderBottomColor: blueNavy
   },
   title: {
     marginTop: 5,

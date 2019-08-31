@@ -32,16 +32,16 @@ export const screensNavOptions = {
   [Routes.Home]: {
     headerTitle: 'Home'
   },
+  */
+ [Routes.InitialLoading]: {
+   header: null,
+   headerStyle: {
+     elevation: 0,
+     shadowOpacity: 0
+    }
+  },
   [Routes.Login]: {
     header: null
-  }
-  */
-  [Routes.InitialLoading]: {
-    header: null,
-    headerStyle: {
-      elevation: 0,
-      shadowOpacity: 0
-    }
   }
 };
 

@@ -83,14 +83,6 @@ class Login extends Component {
               error={credentialsError}
             />
             <CustomButton
-              borderless
-              link
-              onPress={this.handleRecoverPassword}
-              title={strings.forgotPassword}
-              textStyle={styles.blackText}
-              style={styles.forgotPasswordBtn}
-            />
-            <CustomButton
               primaryBtn
               onPress={handleSubmit}
               title={strings.loginMessage.toUpperCase()}

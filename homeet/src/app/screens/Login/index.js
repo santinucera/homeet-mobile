@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { object, string } from 'yup';
 import Routes from '@constants/routes';
-import AuthActions from '@redux/auth/actions';
+import {actionCreators as authActions} from '@redux/auth/actions';
 
 import { LOGIN_FIELDS, apiErrors } from './constants';
 import Login from './layout';
@@ -97,7 +97,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  login: values => dispatch(AuthActions.login(values))
+  login: values => dispatch(authActions.login(values))
 });
 
 export default connect(

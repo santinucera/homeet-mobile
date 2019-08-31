@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { transparent, alto, white, black } from '@constants/colors';
+import { transparent, alto, white } from '@constants/colors';
 
 const iconSize = 30;
 
@@ -35,7 +35,7 @@ export default StyleSheet.create({
     tintColor: alto
   },
   primaryBtn: {
-    backgroundColor: black,
+    backgroundColor: '#2A5365',
     borderRadius: 4,
     color: white
   },
