@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
   blueCircle: {
     backgroundColor: green,
     borderRadius: 25,
-    height: 15,
-    width: 15
+    height: 30,
+    width: 30
   }
 });
 

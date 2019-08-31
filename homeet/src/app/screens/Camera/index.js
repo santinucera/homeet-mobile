@@ -26,7 +26,8 @@ class CameraContainer extends Component {
   };
 
   render() {
-    return <Camera onTakePicture={this.handleTakePicture} />;
+    const { enabled } = this.state;
+    return <Camera onTakePicture={this.handleTakePicture} enabled={enabled}/>;
   }
 }
 
