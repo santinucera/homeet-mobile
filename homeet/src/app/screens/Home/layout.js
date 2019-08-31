@@ -8,8 +8,8 @@ import styles from './styles';
 export default function Home({ onLogout, onCamera }) {
   return (
     <View style={styles.container}>
-      <CustomButton onPress={onLogout} green title="Cerrar sesion!" style={styles.logout} />
-      <CustomButton onPress={onCamera} blue title="Camara!" style={styles.camera} />
+      <CustomButton onPress={onLogout} black title="Cerrar sesion!" style={styles.logout} />
+      <CustomButton onPress={onCamera} black title="Camara!" style={styles.camera} />
     </View>
   );
 }

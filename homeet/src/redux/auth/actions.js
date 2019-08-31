@@ -20,7 +20,7 @@ export const actionCreators = {
         dispatch(
           StackActions.reset({
             index: 0,
-            actions: [NavigationActions.navigate({ routeName: Routes.Camera })]
+            actions: [NavigationActions.navigate({ routeName: Routes.Home })]
           })
         );
       })

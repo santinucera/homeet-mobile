@@ -24,6 +24,9 @@ const mapStateToProps = store => ({
   initialLoading: store.auth.initialLoading
 });
 
-const enhance = compose(connect(mapStateToProps), Loadable(props => props.initialLoading));
+const enhance = compose(
+  connect(mapStateToProps),
+  Loadable(props => props.initialLoading)
+);
 
 export default enhance(InitialLoading);

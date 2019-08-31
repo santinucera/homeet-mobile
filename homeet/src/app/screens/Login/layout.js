@@ -1,8 +1,8 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import i18next from 'i18next';
-import {transparent} from '@constants/colors';
+import { transparent } from '@constants/colors';
 import Loadable from '@components/Loadable';
 import CustomTextInput from '@components/CustomTextInput';
 import CustomButton from '@components/CustomButton';
@@ -10,7 +10,7 @@ import CustomText from '@components/CustomText';
 
 import styles from './styles';
 
-export function Login({onLogin}) {
+export function Login({ onLogin }) {
   return (
     <View style={styles.container}>
       <CustomText styles={styles.title}>Homeet</CustomText>

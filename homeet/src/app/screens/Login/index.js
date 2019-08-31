@@ -1,29 +1,29 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {actionCreators as authActions} from '@redux/auth/actions';
+import { actionCreators as authActions } from '@redux/auth/actions';
 
 import './i18n';
 import Login from './layout';
 
 class LoginContainer extends Component {
   handleLogin = () => {
-    const {dispatch} = this.props;
+    const { dispatch } = this.props;
     dispatch(authActions.login());
   };
 
   render() {
-    const {loading} = this.props;
+    const { loading } = this.props;
     return <Login onLogin={this.handleLogin} loading={loading} />;
   }
 }
 
 LoginContainer.propTypes = {
-  loading: PropTypes.bool,
+  loading: PropTypes.bool
 };
 
 const mapStateToProps = store => ({
-  loading: store.auth.currentUserLoading,
+  loading: store.auth.currentUserLoading
 });
 
 export default connect(mapStateToProps)(LoginContainer);
