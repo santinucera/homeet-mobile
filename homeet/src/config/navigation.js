@@ -2,7 +2,7 @@ import React from 'react';
 import i18next from 'i18next';
 import { HeaderBackButton } from 'react-navigation';
 import Routes from '@constants/routes';
-import { blue, white, green } from '@constants/colors';
+import { blue, white, green, blueNavy } from '@constants/colors';
 import CloseSessionButton from '@app/components/CloseSessionButton';
 
 // Default nav options for all screens
@@ -30,7 +30,10 @@ const defaultNavOptions = ({ navigation }) => ({
 
 export const screensNavOptions = {
   [Routes.Home]: {
-      headerRight: <CloseSessionButton />
+    headerRight: <CloseSessionButton />,
+    headerStyle: {
+      backgroundColor: blueNavy
+    }
   },
   [Routes.Camera]: ({ navigation }) => ({
     headerTitle: 'Camara',

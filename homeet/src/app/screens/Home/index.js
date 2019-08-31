@@ -18,7 +18,7 @@ class HomeContainer extends Component {
   }
 
   render() {
-    return <Home onLogout={this.handleLogout} onCamera={this.handleCamera} />;
+    return <Home onCamera={this.handleCamera} />;
   }
 }
 

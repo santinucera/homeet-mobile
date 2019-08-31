@@ -8,20 +8,24 @@ import SeparatorWithText from '@components/SeparatorWithText';
 import { blueNavy } from '@constants/colors';
 
 import styles from './styles';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default function Home({ onLogout, onCamera }) {
+export default function Home({ onCamera }) {
   return (
     <View style={styles.container}>
+      <TouchableOpacity onPress={onCamera}>
       <Image source={find} style={styles.image}/>
-      <CustomButton onPress={onLogout} black title="Buscar" />
+      <CustomButton onPress={onCamera} black title="Buscar" />
+      </TouchableOpacity>
       <SeparatorWithText separatorStyle={{ backgroundColor: blueNavy, marginBottom: 40, marginTop: 20  }}/>
+      <TouchableOpacity onPress={onCamera}>
       <Image source={upload} style={styles.image}/>
       <CustomButton onPress={onCamera} black title="Subir" />
+      </TouchableOpacity>
     </View>
   );
 }
 
 Home.propTypes = {
-  onLogout: PropTypes.func.isRequired,
   onCamera: PropTypes.func.isRequired
 };
