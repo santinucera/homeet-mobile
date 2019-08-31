@@ -53,6 +53,9 @@ export const screensNavOptions = {
   },
   [Routes.UploadPerson]: {
     header: null
+  },
+  [Routes.ThankYou]: {
+    header: null
   }
 };
 

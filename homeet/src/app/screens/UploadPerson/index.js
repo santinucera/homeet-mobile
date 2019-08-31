@@ -7,10 +7,13 @@ import AuthActions from '@redux/auth/actions';
 
 import { UPLOAD_PERSON_FIELDS } from './constants';
 import UploadPerson from './layout';
+import { compose } from 'recompose';
+import { withNavigation, NavigationActions, StackActions } from 'react-navigation';
 
 class UploadPersonContainer extends Component {
   state = {
-    currentStep: 0
+    currentStep: 0,
+    loading: false
   };
 
   initialValues = {
@@ -45,14 +48,15 @@ class UploadPersonContainer extends Component {
   };
 
   handleUploadPerson = values => {
-    const { uploadPerson } = this.props;
-    debugger;
-    uploadPerson(values);
+    // const { uploadPerson } = this.props;
+    this.setState({ loading: true })
+    setTimeout(() => this.props.navigate()
+    , 2000)
+    // uploadPerson(values);
   };
 
   render() {
-    const { currentStep } = this.state;
-    const { loading } = this.props;
+    const { currentStep, loading } = this.state;
     return (
       <UploadPerson
         currentStep={currentStep}
@@ -74,10 +78,17 @@ const mapStateToProps = state => ({
 UploadPersonContainer.propTypes = {};
 
 const mapDispatchToProps = dispatch => ({
-  uploadPerson: values => dispatch(AuthActions.signUp(values))
+  uploadPerson: values => dispatch(AuthActions.signUp(values)),
+  navigate: () => dispatch(
+    StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: 'ThankYou' })]
+    }))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UploadPersonContainer);
+const enhancer = compose(
+  withNavigation,
+  connect(mapStateToProps,mapDispatchToProps)
+  );
+
+export default enhancer(UploadPersonContainer);
