@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { black } from '@constants/colors'
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: black,
-    height: refRatioScale(120),
+    height: 120,
     width: '100%'
   }
 });
