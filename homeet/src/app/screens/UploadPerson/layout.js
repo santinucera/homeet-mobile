@@ -15,6 +15,7 @@ import userIcon from '@assets/ic_user.png';
 import noteIcon from '@assets/ic_note.png';
 import cakeIcon from '@assets/ic_cake.png';
 import rulerIcon from '@assets/ic_ruler.png';
+import picture from '@assets/pic.jpeg';
 import { transparent } from '@constants/colors';
 
 import styles, { stepIndicatorStyles } from './styles';
@@ -25,8 +26,11 @@ const KeyboardAwareView = KeyboardAware(View);
 
 class UploadPerson extends Component {
   [UPLOAD_PERSON_FIELDS.LAST_LOCATION] = React.createRef();
+
   [UPLOAD_PERSON_FIELDS.ID] = React.createRef();
+
   [UPLOAD_PERSON_FIELDS.AGE] = React.createRef();
+
   [UPLOAD_PERSON_FIELDS.HEIGHT] = React.createRef();
 
   handleNameSubmitting = () => {
@@ -52,10 +56,10 @@ class UploadPerson extends Component {
 
   render() {
     const { currentStep, handleSubmit, values, setFieldValue, onNext } = this.props;
-    debugger
+    debugger;
     const finalStep = currentStep === 1;
     return (
-      <BaseForm link onSubmit={handleSubmit} scrollable>
+      <BaseForm link onSubmit={handleSubmit} scrolleable>
         <View style={styles.container}>
           <StepIndicator
             customStyles={stepIndicatorStyles}
@@ -114,7 +118,7 @@ class UploadPerson extends Component {
                 onTextSubmitEditing={this.handleLocationsSubmitting}
                 textRef={this[UPLOAD_PERSON_FIELDS.LAST_LOCATION]}
                 labelIcon={locationIcon}
-                />
+              />
               <CustomTextInput
                 name={UPLOAD_PERSON_FIELDS.HEIGHT}
                 underlineColorAndroid={transparent}
@@ -129,12 +133,15 @@ class UploadPerson extends Component {
               />
             </>
           ) : (
-            <CustomButton
-              primaryBtn
-              onPress={onNext}
-              title={!finalStep ? strings.next : strings.uploadButton}
-              textStyle={styles.whiteText}
-              style={styles.signUpBtn}
+            <Image
+              source={picture}
+              style={{
+                marginBottom: 10,
+                height: '80%',
+                width: '90%',
+                resizeMode: 'contain',
+                alignSelf: 'center'
+              }}
             />
           )}
           <CustomButton

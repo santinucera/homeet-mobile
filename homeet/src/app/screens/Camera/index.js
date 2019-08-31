@@ -21,6 +21,7 @@ class CameraContainer extends Component {
     if (this.camera) {
       const { uri } = await this.camera.takePictureAsync(TAKE_PHOTO_OPTIONS);
       CameraRoll.saveToCameraRoll(uri);
+      debugger;
       onSavePhoto(uri);
       this.setState({ enabled: true });
     }
