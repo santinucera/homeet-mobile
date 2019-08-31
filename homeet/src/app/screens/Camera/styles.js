@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-const MARGIN_HORIZONTAL_BUTTON = 20;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -13,12 +11,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   button: {
-    marginHorizontal: MARGIN_HORIZONTAL_BUTTON
+    marginHorizontal: 20
   },
   footer: {
-    flex: 0.2,
-    backgroundColor: '#ffffff',
-    justifyContent: 'center'
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: black,
+    height: refRatioScale(120),
+    width: '100%'
   }
 });
 

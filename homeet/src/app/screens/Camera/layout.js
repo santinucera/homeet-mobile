@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { RNCamera, FaceDetector } from 'react-native-camera';
+import { RNCamera } from 'react-native-camera';
 import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 import CustomText from '@components/CustomText';
@@ -16,19 +16,25 @@ class Camera extends Component {
           style={styles.preview}
           ref={this.camRef}
           type={RNCamera.Constants.Type.back}
+          playSoundOnCapture={false}
+          captureAudio={false}
           androidCameraPermissionOptions={{
-            title: 'Permission to use camera',
-            message: 'We need your permission to use your camera',
+            title: 'Permisos para usar la camara',
+            message: 'Necesitamos tu permiso para usar la camara',
             buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
+            buttonNegative: 'Cancelar'
           }}
           androidRecordAudioPermissionOptions={{
-            title: 'Permission to use audio recording',
-            message: 'We need your permission to use your audio',
+            title: 'Permisos para grabar audio',
+            message: 'Necesitamos tu permiso para grabar audio',
             buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
+            buttonNegative: 'Cancelar'
           }}
-        />
+        >
+          <View style={styles.footer}>
+            <CameraButton onTakePhoto={onTakePicture} enabled={enabled} />
+          </View>
+      </RNCamera>
       </View>
     );
   }
