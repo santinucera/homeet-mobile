@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { transparent, gray, black, white } from '@constants/colors';
+import { transparent, gray, white, blueNavy } from '@constants/colors';
 import { scale, verticalScale } from '@utils/scalingUtils';
 
 export default StyleSheet.create({
@@ -25,7 +25,7 @@ export default StyleSheet.create({
     backgroundColor: transparent,
     height: verticalScale(42),
     width: '100%',
-    color: black
+    color: blueNavy
   },
   logo: {
     alignSelf: 'center',

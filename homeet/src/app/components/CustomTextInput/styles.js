@@ -52,6 +52,6 @@ export default StyleSheet.create({
     alignSelf: 'flex-start',
     marginTop: 4,
     marginBottom: 10,
-    color: red
+    color: blueNavy
   }
 });
