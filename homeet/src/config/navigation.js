@@ -1,6 +1,7 @@
 import i18next from 'i18next';
+import { HeaderBackButton } from 'react-navigation';
 import Routes from '@constants/routes';
-import { blue, white } from '@constants/colors';
+import { blue, white, black, green } from '@constants/colors';
 
 // Default nav options for all screens
 const defaultNavOptions = ({ navigation }) => ({
@@ -36,6 +37,15 @@ export const screensNavOptions = {
     header: null
   }
   */
+  [Routes.Camera]: ({ navigation }) => ({
+    headerTitle: 'Camara',
+    headerStyle: {
+      backgroundColor: black
+    },
+    headerLeft: HeaderBackButton,
+    headerTintColor: green,
+    headerBackTitle: 'Volver'
+  }),
   [Routes.InitialLoading]: {
     header: null,
     headerStyle: {

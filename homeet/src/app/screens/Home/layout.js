@@ -11,10 +11,10 @@ export default function Home({ onLogout, onCamera }) {
       <CustomButton onPress={onLogout} green title="Cerrar sesion!" style={styles.logout} />
       <CustomButton onPress={onCamera} blue title="Camara!" style={styles.camera} />
     </View>
-    
   );
 }
 
 Home.propTypes = {
-  onLogout: PropTypes.func.isRequired
+  onLogout: PropTypes.func.isRequired,
+  onCamera: PropTypes.func.isRequired
 };

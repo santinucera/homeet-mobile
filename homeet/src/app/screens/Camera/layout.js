@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { RNCamera } from 'react-native-camera';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
-import CustomText from '@components/CustomText';
+
 import CameraButton from './CameraButton';
 import styles from './styles';
 
 class Camera extends Component {
-  
   camRef = React.createRef();
+
   render() {
     const { onTakePicture, enabled } = this.props;
     return (
@@ -35,7 +35,7 @@ class Camera extends Component {
           <View style={styles.footer}>
             <CameraButton onTakePhoto={onTakePicture} enabled={enabled} />
           </View>
-      </RNCamera>
+        </RNCamera>
       </View>
     );
   }
