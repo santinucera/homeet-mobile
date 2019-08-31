@@ -13,8 +13,8 @@ export default createStackNavigator(
   {
     ...inferRoute({ InitialLoading }),
     ...inferRoute({ Login }),
-    ...inferRoute({ Home }),
-    ...inferRoute({ Camera })
+    ...inferRoute({ Camera }),
+    ...inferRoute({ Home })
   },
   stackNavConfig
 );

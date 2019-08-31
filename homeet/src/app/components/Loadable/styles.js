@@ -5,6 +5,6 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: white
+    backgroundColor: '#DCC7AF'
   }
 });
