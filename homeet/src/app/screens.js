@@ -8,13 +8,15 @@ import InitialLoading from '@screens/InitialLoading';
 import Login from '@screens/Login';
 import Camera from '@screens/Camera';
 import Home from '@screens/Home';
+import UploadPerson from '@screens/UploadPerson';
 
 export default createStackNavigator(
   {
     ...inferRoute({ InitialLoading }),
     ...inferRoute({ Login }),
     ...inferRoute({ Camera }),
-    ...inferRoute({ Home })
+    ...inferRoute({ Home }),
+    ...inferRoute({ UploadPerson })
   },
   stackNavConfig
 );

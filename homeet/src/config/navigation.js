@@ -49,7 +49,10 @@ export const screensNavOptions = {
     }
   },
   [Routes.Login]: {
-    header: null  
+    header: null
+  },
+  [Routes.UploadPerson]: {
+    header: null
   },
 };
 

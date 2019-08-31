@@ -6,9 +6,9 @@ import CustomButton from '@components/CustomButton';
 import closeIcon from '@assets/closeSession.jpg';
 import { actionCreators as authActions } from '@redux/auth/actions';
 import Routes from '@constants/routes';
+import { compose } from 'recompose';
 
 import styles from './styles';
-import { compose } from 'recompose';
 
 class AddButton extends Component {
   handleLogout = () => {
@@ -23,7 +23,6 @@ class AddButton extends Component {
 const enhancer = compose(
   withNavigation,
   connect()
-)
-
+);
 
 export default enhancer(AddButton);

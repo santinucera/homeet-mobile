@@ -4,7 +4,8 @@ const Routes = {
   Tab1: 'Tab1',
   Tab2: 'Tab2',
   Home: 'Home',
-  Camera: 'Camera'
+  Camera: 'Camera',
+  UploadPerson: 'UploadPerson'
 };
 
 export default Routes;

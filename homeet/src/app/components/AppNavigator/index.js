@@ -19,13 +19,10 @@ const AppNavigator = () => {
     return true;
   };
 
-  useEffect(
-    () => {
-      BackHandler.addEventListener('hardwareBackPress', onBackPress);
-      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
-    },
-    [state.index]
-  );
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', onBackPress);
+    return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+  }, [onBackPress, state.index]);
 
   return <AppWithNavigationState state={state} dispatch={dispatch} />;
 };

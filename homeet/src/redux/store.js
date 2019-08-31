@@ -6,9 +6,10 @@ import {
   createNavigationReducer
 } from 'react-navigation-redux-helpers';
 import { fetchMiddleware, configureMergeState } from 'redux-recompose';
-import Navigator from '@screens';
 
 import auth from './auth/reducer';
+
+import Navigator from '@screens';
 
 const nav = createNavigationReducer(Navigator);
 
