@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Routes from '@constants/routes';
 import AuthActions from '@redux/auth/actions';
 
-import { SIGN_UP_FIELDS } from './constants';
+import { UPLOAD_PERSON_FIELDS } from './constants';
 import SignUp from './layout';
 
 class UploadPersonContainer extends Component {
@@ -14,22 +14,22 @@ class UploadPersonContainer extends Component {
   };
 
   initialValues = {
-    [SIGN_UP_FIELDS.AGE]: '',
-    [SIGN_UP_FIELDS.HEIGHT]: '',
-    [SIGN_UP_FIELDS.ID]: '',
-    [SIGN_UP_FIELDS.LAST_LOCATION]: '',
-    [SIGN_UP_FIELDS.LAST_NAME]: '',
-    [SIGN_UP_FIELDS.NAME]: ''
+    [UPLOAD_PERSON_FIELDS.AGE]: '',
+    [UPLOAD_PERSON_FIELDS.HEIGHT]: '',
+    [UPLOAD_PERSON_FIELDS.ID]: '',
+    [UPLOAD_PERSON_FIELDS.LAST_LOCATION]: '',
+    [UPLOAD_PERSON_FIELDS.LAST_NAME]: '',
+    [UPLOAD_PERSON_FIELDS.NAME]: ''
   };
 
   formValidationSchema = {
     0: object().shape({
-      [SIGN_UP_FIELDS.AGE]: string().required('Campo requerido'),
-      [SIGN_UP_FIELDS.HEIGHT]: string().required('Campo requerido'),
-      [SIGN_UP_FIELDS.ID]: string().required('Campo requerido'),
-      [SIGN_UP_FIELDS.LAST_LOCATION]: string().required('Campo requerido'),
-      [SIGN_UP_FIELDS.LAST_NAME]: string().required('Campo requerido'),
-      [SIGN_UP_FIELDS.NAME]: string().required('Campo requerido')
+      [UPLOAD_PERSON_FIELDS.AGE]: string().required('Campo requerido'),
+      [UPLOAD_PERSON_FIELDS.HEIGHT]: string().required('Campo requerido'),
+      [UPLOAD_PERSON_FIELDS.ID]: string().required('Campo requerido'),
+      [UPLOAD_PERSON_FIELDS.LAST_LOCATION]: string().required('Campo requerido'),
+      [UPLOAD_PERSON_FIELDS.LAST_NAME]: string().required('Campo requerido'),
+      [UPLOAD_PERSON_FIELDS.NAME]: string().required('Campo requerido')
     }),
     1: object().shape({})
   };

@@ -53,7 +53,7 @@ export const screensNavOptions = {
   },
   [Routes.UploadPerson]: {
     header: null
-  },
+  }
 };
 
 export const stackNavConfig = {

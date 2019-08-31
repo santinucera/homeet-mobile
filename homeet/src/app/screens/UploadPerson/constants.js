@@ -1,7 +1,7 @@
 export const STEP_INDICATOR_LABELS = ['Datos personales', 'Imagen'];
 export const STEP_INDICATOR_STEPS = 2;
 
-export const SIGN_UP_FIELDS = {
+export const UPLOAD_PERSON_FIELDS = {
   NAME: 'name',
   LAST_NAME: 'last_name',
   LAST_LOCATION: 'last_location',
@@ -14,9 +14,7 @@ export const SIGN_UP_FIELDS = {
 
 export const strings = {
   next: 'Siguiente',
-  uploadButton: 'Subir'
+  uploadButton: 'Subir',
+  name: 'Nombre'
 };
 
-export const inputFieldsSignUp = [SIGN_UP_FIELDS.COMPANY_NAME, SIGN_UP_FIELDS.CUIT, SIGN_UP_FIELDS.PHONE];
-
-export const authFieldsSignUp = [SIGN_UP_FIELDS.NAME, SIGN_UP_FIELDS.EMAIL, SIGN_UP_FIELDS.PASSWORD];

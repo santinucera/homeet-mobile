@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { tundora, white, alto, dustyGray, doveGray, gray, blueNavy } from '@constants/colors';
+import { tundora, white, alto, dustyGray, doveGray, gray, blueNavy, transparent } from '@constants/colors';
 import { scale, verticalScale } from '@utils/scalingUtils';
 
 export const stepIndicatorStyles = {
@@ -81,6 +81,12 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     justifyContent: 'center'
+  },
+  formElement: {
+    backgroundColor: transparent,
+    height: verticalScale(42),
+    width: '100%',
+    color: blueNavy
   }
 });
 

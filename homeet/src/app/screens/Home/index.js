@@ -18,7 +18,7 @@ class HomeContainer extends Component {
   };
 
   render() {
-    return <Home onCamera={this.handleCamera} onUploadPerson={this.handleUploadPerson}/>;
+    return <Home onCamera={this.handleCamera} onUploadPerson={this.handleUploadPerson} />;
   }
 }
 

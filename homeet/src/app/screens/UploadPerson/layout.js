@@ -5,13 +5,15 @@ import { withFormik } from 'formik';
 import { compose } from 'recompose';
 import StepIndicator from '@components/CustomStepper';
 import KeyboardAware from '@components/KeyboardAware';
+import { FormField as CustomTextInput } from '@components/CustomTextInput';
 import CustomButton from '@components/CustomButton';
 import CustomText from '@components/CustomText';
 import Loadable from '@components/Loadable';
 import BaseForm from '@components/BaseForm';
 
 import styles, { stepIndicatorStyles } from './styles';
-import { STEP_INDICATOR_LABELS, STEP_INDICATOR_STEPS, strings, SIGN_UP_FIELDS } from './constants';
+import { STEP_INDICATOR_LABELS, STEP_INDICATOR_STEPS, strings, UPLOAD_PERSON_FIELDS } from './constants';
+import { transparent } from '@constants/colors';
 
 const KeyboardAwareImage = KeyboardAware(Image);
 const KeyboardAwareView = KeyboardAware(View);
@@ -28,22 +30,31 @@ class UploadPerson extends Component {
     return (
       <BaseForm link onSubmit={handleSubmit}>
         <View style={styles.container}>
-
           <StepIndicator
             customStyles={stepIndicatorStyles}
             currentPosition={currentStep}
             stepCount={STEP_INDICATOR_STEPS}
             labels={STEP_INDICATOR_LABELS}
             currentStepCompleted
-            />
-            <CustomButton
-              primaryBtn
-              onPress={handleSubmit}
-              title={!finalStep ? strings.next : strings.uploadButton}
-              textStyle={styles.whiteText}
-              style={[styles.signUpBtn, currentStep === 0 && { width: '100%' }]}
-              />
-              </View>
+          />
+          <CustomTextInput
+            name={UPLOAD_PERSON_FIELDS.NAME}
+            underlineColorAndroid={transparent}
+            placeholder={strings.name}
+            style={styles.formElement}
+            autoCapitalize="none"
+            returnKeyType="next"
+            underline
+          />
+
+          <CustomButton
+            primaryBtn
+            onPress={handleSubmit}
+            title={!finalStep ? strings.next : strings.uploadButton}
+            textStyle={styles.whiteText}
+            style={[styles.signUpBtn, currentStep === 0 && { width: '100%' }]}
+          />
+        </View>
       </BaseForm>
     );
   }
@@ -55,18 +66,6 @@ UploadPerson.propTypes = {
   onGoToLogin: PropTypes.func.isRequired,
   setFieldValue: PropTypes.func.isRequired,
   setTouched: PropTypes.func.isRequired,
-  values: PropTypes.shape({
-    [SIGN_UP_FIELDS.ADDRESS]: PropTypes.string,
-    [SIGN_UP_FIELDS.COMPANY_NAME]: PropTypes.string,
-    [SIGN_UP_FIELDS.CUIT]: PropTypes.string,
-    [SIGN_UP_FIELDS.EMAIL]: PropTypes.string,
-    [SIGN_UP_FIELDS.LOCATION]: PropTypes.string,
-    [SIGN_UP_FIELDS.NAME]: PropTypes.string,
-    [SIGN_UP_FIELDS.PASSWORD]: PropTypes.string,
-    [SIGN_UP_FIELDS.PHONE]: PropTypes.string,
-    [SIGN_UP_FIELDS.QR_URL]: PropTypes.string,
-    [SIGN_UP_FIELDS.STREET_NUMBER]: PropTypes.string
-  }),
   onBack: PropTypes.func.isRequired
 };
 
