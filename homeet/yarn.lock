@@ -842,6 +842,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.6.1.tgz#19be07fc1d65c77bdeb20f46108ba12076aad1c5"
   integrity sha512-1WA28xfdhG+unkTEk/lXnqI2izv6belo0CYw7UdvaeHm8TIYT6eTmIIdGR7oiCa2xSKEnaPQqRMH6h7gyLNbww==
 
+"@react-native-community/cameraroll@^1.2.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/cameraroll/-/cameraroll-1.8.1.tgz#cf0efd3f963a53448ca246c186c273d3675731e5"
+  integrity sha512-5omI11UUNGpNFPmaE/TQVARFdP+ZvxiTl3rLluGS4raqvPVqz5C8ETVVKCnGk8FjVhuc/7CdfAkC6mvokAsAcw==
+
 "@react-native-community/cli-platform-android@^2.6.0", "@react-native-community/cli-platform-android@^2.9.0":
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-android/-/cli-platform-android-2.9.0.tgz#28831e61ce565a2c7d1905852fce1eecfd33cb5e"
@@ -3489,9 +3494,9 @@ getpass@^0.1.1:
     assert-plus "^1.0.0"
 
 glob-parent@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.0.0.tgz#1dc99f0f39b006d3e92c2c284068382f0c20e954"
-  integrity sha512-Z2RwiujPRGluePM6j699ktJYxmPpJKCfpGA13jz2hmFZC7gKetzrWvg5KN3+OsIFmydGyZ1AVwERCq1w/ZZwRg==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"
+  integrity sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==
   dependencies:
     is-glob "^4.0.1"
 
@@ -6419,10 +6424,10 @@ react-lifecycles-compat@^3.0.2:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-camera@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.3.0.tgz#3ac45efb0bad1a44540026c05459f42f7f0bbdba"
-  integrity sha512-PFSGsrTTmIHHGRVBvbIMiSP4VfYIyP56lLg6GfYWE9IbjiLDmCmgBOQRSWYl1rLCEbNvYb0sCS17NbKAKl7PZw==
+react-native-camera@^3.1.1:
+  version "3.44.1"
+  resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.44.1.tgz#60e7d60fe778c1fc59d0579b64c63c3c1a59865a"
+  integrity sha512-B95RL3laK2v8R7L/37v28MYcEcwsM/mS94h6EZuRMLH5HFolkAwh7zJo+UAn7FG9eFtAdBwIM6s9OqYudTVO4Q==
   dependencies:
     prop-types "^15.6.2"
 
